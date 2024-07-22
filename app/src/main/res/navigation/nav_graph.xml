@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="dev.codeiansh.game.HomeFragment"
+        android:name="dev.codeiansh.game.fragments.HomeFragment"
         android:label="Home"
         tools:layout="+@layout/fragment_home.xml">
 
@@ -18,13 +18,13 @@
 
     <fragment
         android:id="@+id/appsFragment"
-        android:name="dev.codeiansh.game.AppsFragment"
+        android:name="dev.codeiansh.game.fragments.AppsFragment"
         android:label="Apps"
         tools:layout="+@layout/fragment_apps.xml" />
 
     <fragment
         android:id="@+id/gameFragment"
-        android:name="dev.codeiansh.game.GameFragment"
+        android:name="dev.codeiansh.game.fragments.GameFragment"
         android:label="Games"
         tools:layout="+@layout/fragment_game.xml" />
 
