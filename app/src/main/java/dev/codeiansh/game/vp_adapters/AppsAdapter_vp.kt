@@ -1,6 +1,5 @@
 package dev.codeiansh.game.vp_adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.codeiansh.game.R
 import dev.codeiansh.game.vp_model.AppsModel_vp
 
-class AppsAdapter_vp(private val appsList: List<AppsModel_vp>, val context: Context) :
+class AppsAdapter_vp(private val appsList: List<AppsModel_vp>) :
     RecyclerView.Adapter<AppsAdapter_vp.AppsViewHolder>() {
 
     class AppsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,7 +21,7 @@ class AppsAdapter_vp(private val appsList: List<AppsModel_vp>, val context: Cont
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppsViewHolder {
 
         return AppsViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_apps, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.vp_apps, parent, false)
         )
     }
 

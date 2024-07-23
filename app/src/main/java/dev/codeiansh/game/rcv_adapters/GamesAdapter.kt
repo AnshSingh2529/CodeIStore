@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_model.GamesModel
 
-class GamesAdapter(private val gamesList: List<GamesModel>, val context: Context) :
+class GamesAdapter(private val gamesList: List<GamesModel>) :
     RecyclerView.Adapter<GamesAdapter.GamesViewHolder>() {
 
     class GamesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -26,7 +26,7 @@ class GamesAdapter(private val gamesList: List<GamesModel>, val context: Context
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GamesViewHolder {
 
         return GamesViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_game, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.rcv_games, parent, false)
         )
     }
 

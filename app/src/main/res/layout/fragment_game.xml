@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/gameFragmentView"
     tools:context=".fragments.HomeFragment">
 
     <RelativeLayout
@@ -30,7 +31,7 @@
                 android:text="New Games"
                 android:textColor="@color/black"
                 android:textStyle="italic"
-                android:textsize="14sp" />
+                android:textSize="14sp" />
 
             <View
                 android:layout_width="0dp"
@@ -53,7 +54,7 @@
         </FrameLayout>
 
         <LinearLayout
-            android:id="@+id/gamesHead"
+            android:id="@id/gamesHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/vpGameFrame"
@@ -75,7 +76,7 @@
                 android:text="Games"
                 android:textColor="@color/black"
                 android:textStyle="italic"
-                android:textsize="14sp" />
+                android:textSize="14sp" />
 
             <View
                 android:layout_width="0dp"

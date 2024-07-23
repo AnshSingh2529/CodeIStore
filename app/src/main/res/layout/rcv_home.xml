@@ -15,7 +15,7 @@
        android:padding="16dp"
        >
        <ImageView
-           android:id="@+id/rcv_Home_image"
+           android:id="@+id/rcvHome_image"
            android:layout_width="match_parent"
            android:layout_height="200dp"
            android:scaleType="centerCrop"
@@ -23,7 +23,7 @@
            android:layout_gravity="center"
            />
        <TextView
-           android:id="@+id/rcv_Home_text"
+           android:id="@+id/rcvHome_text"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:text="item1"

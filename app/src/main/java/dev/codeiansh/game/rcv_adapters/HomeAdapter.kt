@@ -1,6 +1,5 @@
 package dev.codeiansh.game.rcv_adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +9,12 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_model.HomeModel
 
-class HomeAdapter(private val homeList: List<HomeModel>, val context: Context) :
+class HomeAdapter(private val homeList: List<HomeModel>) :
     RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        private val name: TextView = itemView.findViewById(R.id.rcv_Home_text)
-        private val image: ImageView = itemView.findViewById(R.id.rcv_Home_image)
+        val name: TextView = itemView.findViewById(R.id.rcvHome_text)
+        val image: ImageView = itemView.findViewById(R.id.rcvHome_image)
 
         fun bind(homeModel: HomeModel) {
             name.text = homeModel.name
@@ -27,7 +26,7 @@ class HomeAdapter(private val homeList: List<HomeModel>, val context: Context) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
 
         return HomeViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_home, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.rcv_home, parent, false)
         )
     }
 

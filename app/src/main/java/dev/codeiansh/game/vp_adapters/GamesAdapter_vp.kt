@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.codeiansh.game.R
 import dev.codeiansh.game.vp_model.GamesModel_vp
 
-class GamesAdapter_vp(private val gamesList: List<GamesModel_vp>, val context: Context) :
+class GamesAdapter_vp(private val gamesList: List<GamesModel_vp>) :
     RecyclerView.Adapter<GamesAdapter_vp.GamesViewHolder>() {
 
     class GamesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -25,7 +25,7 @@ class GamesAdapter_vp(private val gamesList: List<GamesModel_vp>, val context: C
         viewType: Int
     ): GamesAdapter_vp.GamesViewHolder {
         return GamesViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_game, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.vp_games, parent, false)
         )
     }
 

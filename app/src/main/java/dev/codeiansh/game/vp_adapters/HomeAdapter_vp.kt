@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.codeiansh.game.R
 import dev.codeiansh.game.vp_model.HomeModel_vp
 
-class HomeAdapter_vp(private val homeList: List<HomeModel_vp>, val context: Context) :
+class HomeAdapter_vp(private val homeList: List<HomeModel_vp>) :
     RecyclerView.Adapter<HomeAdapter_vp.HomeViewHolder>() {
 
     class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,7 +22,7 @@ class HomeAdapter_vp(private val homeList: List<HomeModel_vp>, val context: Cont
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
         return HomeViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.fragment_home, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.vp_home, parent, false)
         )
     }
 
