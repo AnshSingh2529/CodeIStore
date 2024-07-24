@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="rcvlist">#fffffc</color>
     <color name="DarkGray">#313031</color>
     <color name="LightGray">#646464</color>
     <color name="appbar">#d8e2dc</color>

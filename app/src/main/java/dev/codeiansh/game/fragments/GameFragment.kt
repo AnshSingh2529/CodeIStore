@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import dev.codeiansh.game.R
@@ -53,7 +54,7 @@ class GameFragment : Fragment() {
         recyclerView = view.findViewById(R.id.games_recyclerView)
         rcvadapter = GamesAdapter(rcvlist)
         recyclerView.adapter = rcvadapter
-        recyclerView.layoutManager = GridLayoutManager(context, 2);
+        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
 
         handler.postDelayed(runnable, 3000)
         return view

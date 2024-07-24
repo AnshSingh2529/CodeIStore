@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:layout_gravity="center"
-        android:id="@+id/vp_Games_image"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:contentDescription="@string/viewpager_image"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_logout"
-        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="220dp"
+        android:layout_height="150dp"
+        app:cardCornerRadius="20dp"
+        app:cardUseCompatPadding="true"
+        app:cardElevation="4dp"
+        android:layout_gravity="center_horizontal"
+        >
+        <ImageView
+            android:layout_gravity="center"
+            android:id="@+id/vp_Games_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/viewpager_image"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_logout"
+            />
+
+    </androidx.cardview.widget.CardView>
+
 
 </FrameLayout>
