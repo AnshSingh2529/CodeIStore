@@ -7,8 +7,8 @@
     <color name="LightGray">#646464</color>
     <color name="appbar">#d8e2dc</color>
     <color name="fragmentC">#e8e8e4</color>
-    <color name="colorPrimary">#fff0f3</color>
-    <color name="colorPrimaryDark">#e8e8e4</color>
+    <color name="colorPrimary">#fb8500</color>
+    <color name="colorPrimaryDark">#e76f51</color>
     <color name="colorAccent">#313031</color>
 
 

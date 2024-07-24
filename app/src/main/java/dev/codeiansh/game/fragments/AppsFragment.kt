@@ -7,14 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_adapters.AppsAdapter
 import dev.codeiansh.game.rcv_model.AppsModel
-import dev.codeiansh.game.vp_adapters.AppsAdapter_vp
+import dev.codeiansh.game.vp_adapters.AppsAdapterVP
 import dev.codeiansh.game.vp_model.AppsModel_vp
 
 
@@ -22,8 +21,8 @@ class AppsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var rcvadapter: AppsAdapter
     private lateinit var rcvlist: List<AppsModel>
-    private lateinit var viewPager: ViewPager2
-    private lateinit var vpadapter: AppsAdapter_vp
+    private lateinit var viewPager: RecyclerView
+    private lateinit var vpadapter: AppsAdapterVP
     private lateinit var imageList: List<AppsModel_vp>
     private var currentPage = 0
     private val handler = Handler(Looper.getMainLooper())
@@ -38,9 +37,30 @@ class AppsFragment : Fragment() {
 
 
         imageList = listOf(
-            AppsModel_vp(R.drawable.ic_app),
-            AppsModel_vp(R.drawable.ic_games),
-            AppsModel_vp(R.drawable.ic_homes)
+            AppsModel_vp(
+                "1",
+                "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=800"
+            ),
+            AppsModel_vp(
+                "2",
+                "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=800"
+            ),
+            AppsModel_vp(
+                "3",
+                "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=800"
+            ),
+            AppsModel_vp(
+                "4",
+                "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=800"
+            ),
+            AppsModel_vp(
+                "5",
+                "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=800"
+            ),
+            AppsModel_vp(
+                "6",
+                "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=800"
+            ),
         )
         rcvlist = listOf(
             AppsModel("name1", R.drawable.ic_launcher_background),
@@ -50,33 +70,35 @@ class AppsFragment : Fragment() {
         )
 
         viewPager = view.findViewById(R.id.apps_viewPager2)
-        vpadapter = AppsAdapter_vp(imageList)
+        vpadapter = AppsAdapterVP()
         viewPager.adapter = vpadapter
+        vpadapter.submitList(imageList)
 
         recyclerView = view.findViewById(R.id.apps_recyclerView)
         rcvadapter = AppsAdapter(rcvlist)
         recyclerView.adapter = rcvadapter
-        recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+        recyclerView.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
 
-        handler.postDelayed(runnable, 3000)
+//        handler.postDelayed(runnable, 3000)
 
         return view
 
 
     }
 
-    private val runnable = object : Runnable {
-        override fun run() {
-            if (currentPage == vpadapter.itemCount) {
-                currentPage = 0
-            }
-            viewPager.setCurrentItem(currentPage++, true)
-            handler.postDelayed(this, 3000)
-        }
-    }
+//    private val runnable = object : Runnable {
+//        override fun run() {
+//            if (currentPage == vpadapter.itemCount) {
+//                currentPage = 0
+//            }
+//            viewPager.setCurrentItem(currentPage++, true)
+//            handler.postDelayed(this, 3000)
+//        }
+//    }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        handler.removeCallbacks(runnable)
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        handler.removeCallbacks(runnable)
+//    }
 }

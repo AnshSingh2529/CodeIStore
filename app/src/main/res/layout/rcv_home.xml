@@ -4,13 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:background="@drawable/rcvlist"
-    android:padding="6dp">
+    android:padding="12dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        app:cardCornerRadius="30dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
         >
 
@@ -33,7 +32,7 @@
             android:id="@+id/rcvHome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+            android:layout_marginHorizontal="12dp"
             android:text="item1"
             android:textSize="16sp" />
     </LinearLayout>

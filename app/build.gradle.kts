@@ -48,4 +48,6 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
     implementation (libs.androidx.navigation.ui.ktx)
     implementation (libs.fab)
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
 }
