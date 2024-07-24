@@ -3,4 +3,17 @@
     <string name="app_name">Game</string>
     <string name="logo">logo</string>
     <string name="viewpager_image">viewPager_image</string>
+    <string name="for_you">For you</string>
+    <string name="top_charts">Top charts</string>
+    <string name="children">Children</string>
+    <string name="premium">Premium</string>
+    <string name="categories">Categories</string>
+    <string name="email_com">email.com</string>
+    <string name="vpgames">vpGames</string>
+    <string name="vpapps">vpapps</string>
+    <string name="vphome">vphome</string>
+    <string name="item1">item1</string>
+    <string name="rcvhome">rcvhome</string>
+    <string name="rcvapps">rcvapps</string>
+    <string name="rcvgames">rcvgames</string>
 </resources>

@@ -21,7 +21,7 @@ class AppsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var rcvadapter: AppsAdapter
     private lateinit var rcvlist: List<AppsModel>
-    private lateinit var viewPager: RecyclerView
+    private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: AppsAdapterVP
     private lateinit var imageList: List<AppsModel_vp>
     private var currentPage = 0
@@ -67,6 +67,11 @@ class AppsFragment : Fragment() {
             AppsModel("name2", R.drawable.ic_launcher_background),
             AppsModel("name3", R.drawable.ic_launcher_background),
             AppsModel("name4", R.drawable.ic_launcher_background),
+            AppsModel("name5", R.drawable.ic_launcher_background),
+            AppsModel("name6", R.drawable.ic_launcher_background),
+            AppsModel("name7", R.drawable.ic_launcher_background),
+            AppsModel("name8", R.drawable.ic_launcher_background),
+            AppsModel("name9", R.drawable.ic_launcher_background),
         )
 
         viewPager = view.findViewById(R.id.apps_viewPager2)
@@ -80,25 +85,25 @@ class AppsFragment : Fragment() {
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
 
-//        handler.postDelayed(runnable, 3000)
+        handler.postDelayed(runnable, 3000)
 
         return view
 
 
     }
 
-//    private val runnable = object : Runnable {
-//        override fun run() {
-//            if (currentPage == vpadapter.itemCount) {
-//                currentPage = 0
-//            }
-//            viewPager.setCurrentItem(currentPage++, true)
-//            handler.postDelayed(this, 3000)
-//        }
-//    }
+    private val runnable = object : Runnable {
+        override fun run() {
+            if (currentPage == vpadapter.itemCount) {
+                currentPage = 0
+            }
+            viewPager.setCurrentItem(currentPage++, true)
+            handler.postDelayed(this, 3000)
+        }
+    }
 
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        handler.removeCallbacks(runnable)
-//    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        handler.removeCallbacks(runnable)
+    }
 }

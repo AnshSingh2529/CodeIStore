@@ -29,22 +29,25 @@
                     android:id="@+id/menuBtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="start"
+                    android:layout_gravity="start|center"
                     app:navigationIcon="@drawable/ic_menu"
                     app:navigationIconTint="@color/black" />
 
                 <ImageView
                     android:layout_width="0dp"
-                    android:layout_height="80dp"
-                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:layout_marginTop="4dp"
+                    android:scaleType="centerCrop"
                     android:contentDescription="@string/logo"
-                    android:src="@drawable/ic_codestore" />
+                    android:src="@drawable/ic_codestore"
+                    app:tint="@color/colorPrimary" />
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_horizontal|center_vertical|end"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center|end"
                     app:cardCornerRadius="20dp"
                     app:cardUseCompatPadding="true">
 
@@ -52,6 +55,9 @@
                         android:id="@+id/profile"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        app:tint="@color/colorPrimary"
+                        android:contentDescription="@string/logo"
                         android:src="@drawable/ic_codestore" />
 
                 </androidx.cardview.widget.CardView>
@@ -59,44 +65,48 @@
             </LinearLayout>
 
             <com.google.android.material.tabs.TabLayout
+                android:id="@+id/your_tab_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/appbar"
-                app:tabGravity="fill"
                 app:tabIndicatorColor="@color/DarkGray"
-                app:tabIndicatorHeight="2dp"
+                app:tabIndicatorHeight="3dp"
+                app:tabIndicatorFullWidth="false"
                 app:tabMode="scrollable"
-                app:tabSelectedTextColor="@color/colorPrimary">
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabTextAppearance="@style/CustomTabTextAppearance"
+                android:paddingHorizontal="8dp"
+                >
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/forYou"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="For you" />
+                    android:text="@string/for_you" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/topCharts"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Top charts" />
+                    android:text="@string/top_charts" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/Children"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Children" />
+                    android:text="@string/children" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/premium"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Premium" />
+                    android:text="@string/premium" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/Categories"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Categories" />
+                    android:text="@string/categories" />
 
             </com.google.android.material.tabs.TabLayout>
 
@@ -106,6 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/appbar"
+            android:padding="8dp"
             android:background="@drawable/bg_app">
 
             <androidx.fragment.app.FragmentContainerView
@@ -125,31 +136,31 @@
                 android:layout_alignParentBottom="true"
                 android:layout_margin="16dp"
                 app:menu_colorNormal="@color/colorPrimary"
-                app:menu_colorPressed="@color/colorPrimaryDark"
+                app:menu_colorPressed="@color/white"
                 app:menu_colorRipple="@color/colorAccent"
                 app:menu_fab_size="normal"
                 app:menu_showShadow="true">
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/homeBtn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/baseline_home_24"
-                    app:fab_size="mini" />
+                    app:fab_size="normal" />
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/appsBtn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/baseline_apps_24"
-                    app:fab_size="mini" />
+                    app:fab_size="normal" />
 
                 <com.github.clans.fab.FloatingActionButton
                     android:id="@+id/gamesBtn"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:src="@drawable/baseline_games_24"
-                    app:fab_size="mini" />
+                    app:fab_size="normal" />
 
             </com.github.clans.fab.FloatingActionMenu>
 

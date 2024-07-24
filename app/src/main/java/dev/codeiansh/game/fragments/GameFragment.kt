@@ -22,7 +22,7 @@ class GameFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var rcvadapter: GamesAdapter
     private lateinit var rcvlist: List<GamesModel>
-    private lateinit var viewPager: RecyclerView
+    private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: GamesAdapterVP
     private lateinit var imageList: List<GamesModel_vp>
     private var currentPage = 0
@@ -69,6 +69,13 @@ class GameFragment : Fragment() {
             GamesModel("name2", R.drawable.ic_launcher_background),
             GamesModel("name3", R.drawable.ic_launcher_background),
             GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name4", R.drawable.ic_launcher_background),
         )
 
         viewPager = view.findViewById(R.id.games_viewPager2)
@@ -81,23 +88,23 @@ class GameFragment : Fragment() {
         recyclerView.adapter = rcvadapter
         recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
-//        handler.postDelayed(runnable, 3000)
+        handler.postDelayed(runnable, 3000)
         return view
     }
 
-//    private val runnable = object : Runnable {
-//        override fun run() {
-//            if (currentPage == vpadapter.itemCount) {
-//                currentPage = 0
-//            }
-//            viewPager.setCurrentItem(currentPage++, true)
-//            handler.postDelayed(this, 3000)
-//        }
-//    }
-//
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        handler.removeCallbacks(runnable)
-//    }
+    private val runnable = object : Runnable {
+        override fun run() {
+            if (currentPage == vpadapter.itemCount) {
+                currentPage = 0
+            }
+            viewPager.setCurrentItem(currentPage++, true)
+            handler.postDelayed(this, 3000)
+        }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        handler.removeCallbacks(runnable)
+    }
 
 }

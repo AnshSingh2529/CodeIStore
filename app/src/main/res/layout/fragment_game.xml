@@ -16,11 +16,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/games_viewPager2"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager" />
+                android:layout_height="250dp" />
+
         </FrameLayout>
 
         <LinearLayout

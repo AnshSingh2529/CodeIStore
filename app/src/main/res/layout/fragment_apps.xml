@@ -17,12 +17,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/apps_viewPager2"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
-                app:layoutManager="com.google.android.material.carousel.CarouselLayoutManager"
-                />
+                android:layout_height="250dp" />
         </FrameLayout>
 
         <LinearLayout
@@ -61,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="Suggested for you"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <View

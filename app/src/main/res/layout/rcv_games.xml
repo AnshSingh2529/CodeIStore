@@ -4,20 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="12dp">
+    android:padding="12dp"
+   >
 
     <androidx.cardview.widget.CardView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         app:cardCornerRadius="16dp"
-        app:cardElevation="4dp">
+        android:elevation="3dp"
+        app:cardBackgroundColor="@color/white">
 
         <ImageView
             android:id="@+id/rcv_Games_image"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:scaleType="fitXY"
+            android:contentDescription="@string/rcvgames"
+            android:scaleType="centerCrop"
             android:src="@drawable/ic_settings" />
     </androidx.cardview.widget.CardView>
 
@@ -32,8 +35,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="12dp"
-            android:text="item1"
-            android:textSize="16sp" />
+            android:textColor="@color/DarkGray"
+            android:textStyle="normal"
+            android:fontFamily="serif"
+            android:text="@string/item1"
+            android:textSize="16sp"/>
     </LinearLayout>
 
 
