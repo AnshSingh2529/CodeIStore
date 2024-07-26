@@ -1,5 +1,6 @@
-package dev.codeiansh.game
+package dev.codeiansh.game.activity
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -9,6 +10,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.github.clans.fab.FloatingActionButton
 import com.github.clans.fab.FloatingActionMenu
 import com.google.android.material.appbar.MaterialToolbar
+import dev.codeiansh.game.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         navController = navHostFragment.navController
 
         // Initialize UI elements
+        val profile: FloatingActionButton = findViewById(R.id.profile)
         val menuBtn: MaterialToolbar = findViewById(R.id.menuBtn)
         val drawer: DrawerLayout = findViewById(R.id.drawer)
         val floatingMenu: FloatingActionMenu = findViewById(R.id.FloatingActionMenu)
@@ -33,6 +36,13 @@ class MainActivity : AppCompatActivity() {
         // Set navigation drawer button click listener
         menuBtn.setNavigationOnClickListener {
             drawer.openDrawer(GravityCompat.START)
+        }
+
+        profile.setOnClickListener{
+          val dialog = object: Dialog(this){
+
+
+          }
         }
 
         // Set FloatingActionButton click listeners

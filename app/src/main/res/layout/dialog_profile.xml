@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialogbox"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/cancelbtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancelbtn"
+            android:src="@drawable/ic_cancel" />
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="16dp"
+            android:layout_weight="1"
+            android:contentDescription="@string/logo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_codestore" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_info"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="10dp"
+        android:padding="15dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/black"
+            android:elevation="2dp"
+            app:cardCornerRadius="25dp">
+
+            <ImageView
+                android:id="@+id/profilepic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:contentDescription="@string/profilebtn"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person"
+                app:tint="@color/white" />
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:text="@string/users_username"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="4dp"
+                android:text="@string/users_email"
+                android:textColor="@color/DarkGray"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/account_setup_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_accountsetup"
+                android:padding="12dp"
+                android:text="@string/account_setup"
+                android:textColor="@color/LightGray"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginHorizontal="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/bg_dialog_opt"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/managing_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_manage"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/managing_apps"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/notify_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_notify"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/notifications_and_offers"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/payments_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_payments"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/payments_and_subscriptions"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/privacy_policy_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_protect"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/privacy_and_security"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/library_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_Library"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/library"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/app_pass_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_passes"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/app_pass"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/points_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_points"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/points"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/appbar"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/settings_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_setting"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/settings"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/help_feedback_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_help"
+            android:drawablePadding="12dp"
+            android:padding="12dp"
+            android:text="@string/helps_and_feedback"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/privacy_policy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/privacy_policy"
+            android:textColor="@color/LightGray"
+            android:textStyle="bold"
+            />
+
+       <androidx.cardview.widget.CardView
+           android:layout_width="5dp"
+           android:layout_height="5dp"
+           app:cardCornerRadius="2.5dp"
+           android:backgroundTint="@color/black"
+           android:layout_marginHorizontal="12dp"
+           >
+           <View
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               />
+       </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/Term_services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Term_services"
+            android:textColor="@color/LightGray"
+            android:textStyle="bold"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
