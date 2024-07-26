@@ -41,4 +41,8 @@
     <string name="helps_and_feedback">Helps and feedback</string>
     <string name="privacy_policy">Privacy Policy</string>
     <string name="Term_services">Terms of service\n</string>
+    <string name="introimage">introImage</string>
+    <string name="welcome_to_store">Welcome to Store</string>
+    <string name="get_started">Get Started</string>
+    <string name="waveimage">waveImage</string>
 </resources>

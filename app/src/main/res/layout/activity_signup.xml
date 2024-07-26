@@ -119,40 +119,46 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
+
         <Button
             android:id="@+id/signup_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button_gradient"
+            android:backgroundTint="#1d3557"
             android:text="Sign Up"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:cornerRadius="8dp" />
+
 
         <Button
             android:id="@+id/signup_google"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button_outline"
-            android:drawableStart="@drawable/ic_google"
+            android:backgroundTint="#1d3557"
+            android:drawableEnd="@drawable/ic_google"
             android:text="Sign up with Google"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:cornerRadius="8dp" />
 
         <Button
             android:id="@+id/signup_facebook"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@drawable/button_outline"
-            android:drawableStart="@drawable/ic_facebook"
+            android:backgroundTint="#1d3557"
+            android:drawableEnd="@drawable/ic_facebook"
+            android:drawableTint="@color/white"
             android:text="Sign up with Facebook"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:cornerRadius="8dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:layout_marginTop="24dp"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <TextView

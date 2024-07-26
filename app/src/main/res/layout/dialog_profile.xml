@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:background="@drawable/bg_dialogbox"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginHorizontal="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:orientation="horizontal">
 
         <ImageButton
@@ -24,7 +23,7 @@
 
         <ImageView
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginHorizontal="16dp"
             android:layout_weight="1"
@@ -37,10 +36,10 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:background="@drawable/bg_info"
         android:orientation="horizontal"
-        android:layout_marginHorizontal="10dp"
-        android:padding="15dp">
+        android:padding="18dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="50dp"
@@ -103,9 +102,9 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginHorizontal="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/bg_dialog_opt"
         android:orientation="vertical"
@@ -115,85 +114,92 @@
             android:id="@+id/managing_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_manage"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/managing_apps"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_manage"
+            app:drawableTint="@color/DarkGray" />
 
         <TextView
             android:id="@+id/notify_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_notify"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/notifications_and_offers"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_notify"
+            app:drawableTint="@color/DarkGray" />
 
         <TextView
             android:id="@+id/payments_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_payments"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/payments_and_subscriptions"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_payments"
+            app:drawableTint="@color/DarkGray" />
 
         <TextView
             android:id="@+id/privacy_policy_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_protect"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/privacy_and_security"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_privacy"
+            app:drawableTint="@color/DarkGray" />
 
         <TextView
             android:id="@+id/library_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_Library"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/library"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_library"
+            app:drawableTint="@color/DarkGray" />
 
         <TextView
             android:id="@+id/app_pass_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_passes"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/app_pass"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_apppass"
+            app:drawableTint="@color/DarkGray" />
 
         <TextView
             android:id="@+id/points_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_points"
             android:drawablePadding="12dp"
-            android:padding="12dp"
+            android:padding="8dp"
             android:text="@string/points"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_points"
+            app:drawableTint="@color/DarkGray" />
 
 
     </LinearLayout>
@@ -201,74 +207,72 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
         android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="2dp"
         android:background="@color/appbar"
         android:orientation="vertical"
-        android:padding="15dp">
+        android:padding="18dp">
 
         <TextView
             android:id="@+id/settings_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_setting"
             android:drawablePadding="12dp"
             android:padding="12dp"
             android:text="@string/settings"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/settings" />
 
         <TextView
             android:id="@+id/help_feedback_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:drawableStart="@drawable/ic_help"
             android:drawablePadding="12dp"
             android:padding="12dp"
             android:text="@string/helps_and_feedback"
             android:textColor="@color/black"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_help" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="15dp"
         android:gravity="center"
-        >
+        android:orientation="horizontal">
+
         <TextView
             android:id="@+id/privacy_policy"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:text="@string/privacy_policy"
             android:textColor="@color/LightGray"
-            android:textStyle="bold"
-            />
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="5dp"
-           android:layout_height="5dp"
-           app:cardCornerRadius="2.5dp"
-           android:backgroundTint="@color/black"
-           android:layout_marginHorizontal="12dp"
-           >
-           <View
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               />
-       </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="5dp"
+            android:layout_height="5dp"
+            android:layout_marginHorizontal="12dp"
+            android:backgroundTint="@color/black"
+            app:cardCornerRadius="2.5dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/Term_services"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:text="@string/Term_services"
             android:textColor="@color/LightGray"
-            android:textStyle="bold"
-            />
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 

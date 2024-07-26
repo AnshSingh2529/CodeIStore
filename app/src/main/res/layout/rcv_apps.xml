@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:contentDescription="@string/rcvapps"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_settings" />
+            />
     </androidx.cardview.widget.CardView>
 
 
