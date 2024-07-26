@@ -33,11 +33,13 @@ class HomeAdapterVP : ListAdapter<HomeModel_vp, HomeAdapterVP.HomeViewHolder>(Di
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeViewHolder {
-        return HomeViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.vp_home, parent, false))
+        return HomeViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.vp_home, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: HomeViewHolder, position: Int) {
-    val homeModel = getItem(position)
+        val homeModel = getItem(position)
         holder.bind(homeModel)
     }
 

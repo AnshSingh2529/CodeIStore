@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "879874928067",
+    "project_id": "game-ec8cd",
+    "storage_bucket": "game-ec8cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879874928067:android:64d3757a088ee36965a176",
+        "android_client_info": {
+          "package_name": "dev.codeiansh.game"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvyxzve6uns6mqRifHbLBBUR62eNGAcng"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

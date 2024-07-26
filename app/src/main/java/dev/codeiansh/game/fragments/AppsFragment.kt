@@ -16,7 +16,6 @@ import dev.codeiansh.game.rcv_model.AppsModel
 import dev.codeiansh.game.vp_adapters.AppsAdapterVP
 import dev.codeiansh.game.vp_model.AppsModel_vp
 
-
 class AppsFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var rcvadapter: AppsAdapter
@@ -31,11 +30,10 @@ class AppsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_apps, container, false)
 
-
+        // Initialize image list for ViewPager2
         imageList = listOf(
             AppsModel_vp(
                 "1",
@@ -60,8 +58,10 @@ class AppsFragment : Fragment() {
             AppsModel_vp(
                 "6",
                 "https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=800"
-            ),
+            )
         )
+
+        // Initialize recycler view list
         rcvlist = listOf(
             AppsModel("name1", R.drawable.ic_launcher_background),
             AppsModel("name2", R.drawable.ic_launcher_background),
@@ -71,25 +71,26 @@ class AppsFragment : Fragment() {
             AppsModel("name6", R.drawable.ic_launcher_background),
             AppsModel("name7", R.drawable.ic_launcher_background),
             AppsModel("name8", R.drawable.ic_launcher_background),
-            AppsModel("name9", R.drawable.ic_launcher_background),
+            AppsModel("name9", R.drawable.ic_launcher_background)
         )
 
+        // Set up ViewPager2
         viewPager = view.findViewById(R.id.apps_viewPager2)
         vpadapter = AppsAdapterVP()
         viewPager.adapter = vpadapter
         vpadapter.submitList(imageList)
 
+        // Set up RecyclerView
         recyclerView = view.findViewById(R.id.apps_recyclerView)
         rcvadapter = AppsAdapter(rcvlist)
         recyclerView.adapter = rcvadapter
         recyclerView.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
+            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
+        // Auto-scroll ViewPager2
         handler.postDelayed(runnable, 3000)
 
         return view
-
-
     }
 
     private val runnable = object : Runnable {

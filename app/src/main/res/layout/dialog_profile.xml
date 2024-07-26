@@ -13,7 +13,7 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/cancelbtn"
+            android:id="@+id/cancelBtn"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
@@ -42,6 +42,7 @@
         android:padding="18dp">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/profileChange"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:backgroundTint="@color/black"
@@ -49,7 +50,6 @@
             app:cardCornerRadius="25dp">
 
             <ImageView
-                android:id="@+id/profilepic"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -75,6 +75,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/users_email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="7dp"

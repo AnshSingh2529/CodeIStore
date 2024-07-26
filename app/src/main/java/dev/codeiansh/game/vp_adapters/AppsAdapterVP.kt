@@ -9,7 +9,8 @@ import com.bumptech.glide.Glide
 import dev.codeiansh.game.R
 import dev.codeiansh.game.vp_model.AppsModel_vp
 
-class AppsAdapterVP: androidx.recyclerview.widget.ListAdapter<AppsModel_vp, AppsAdapterVP.AppsViewHolder>(DiffUtil()) {
+class AppsAdapterVP :
+    androidx.recyclerview.widget.ListAdapter<AppsModel_vp, AppsAdapterVP.AppsViewHolder>(DiffUtil()) {
 
 
     class DiffUtil : androidx.recyclerview.widget.DiffUtil.ItemCallback<AppsModel_vp>() {
@@ -32,7 +33,9 @@ class AppsAdapterVP: androidx.recyclerview.widget.ListAdapter<AppsModel_vp, Apps
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AppsViewHolder {
-        return AppsViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.vp_apps, parent, false))
+        return AppsViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.vp_apps, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: AppsViewHolder, position: Int) {
