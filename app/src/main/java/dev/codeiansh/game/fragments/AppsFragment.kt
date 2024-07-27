@@ -7,18 +7,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_adapters.AppsAdapter
+import dev.codeiansh.game.rcv_adapters.AppsViewPagerAdapter
 import dev.codeiansh.game.rcv_model.AppsModel
 import dev.codeiansh.game.vp_adapters.AppsAdapterVP
 import dev.codeiansh.game.vp_model.AppsModel_vp
 
 class AppsFragment : Fragment() {
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var rcvadapter: AppsAdapter
+    private lateinit var rcv_viewPager: ViewPager2
     private lateinit var rcvlist: List<AppsModel>
     private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: AppsAdapterVP
@@ -74,18 +72,20 @@ class AppsFragment : Fragment() {
             AppsModel("name9", R.drawable.ic_launcher_background)
         )
 
+        val pageSize = 3
+        val pages = rcvlist.chunked(pageSize)
+
+        rcv_viewPager = view.findViewById(R.id.rcv_viewPager2)
+        val adapter = AppsViewPagerAdapter(pages)
+        rcv_viewPager.adapter = adapter
+
+
+
         // Set up ViewPager2
         viewPager = view.findViewById(R.id.apps_viewPager2)
         vpadapter = AppsAdapterVP()
         viewPager.adapter = vpadapter
         vpadapter.submitList(imageList)
-
-        // Set up RecyclerView
-        recyclerView = view.findViewById(R.id.apps_recyclerView)
-        rcvadapter = AppsAdapter(rcvlist)
-        recyclerView.adapter = rcvadapter
-        recyclerView.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
 
         // Auto-scroll ViewPager2
         handler.postDelayed(runnable, 3000)

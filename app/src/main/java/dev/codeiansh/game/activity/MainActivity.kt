@@ -8,7 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.github.clans.fab.FloatingActionButton
 import dev.codeiansh.game.R
-import dev.codeiansh.game.fragments.DialogBoxProfile
+import dev.codeiansh.game.fragments.BottomSheetProfileDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
 
         // Set profile button click listener
         profileBtn.setOnClickListener {
-            val profileFragment = DialogBoxProfile()
-            profileFragment.show(supportFragmentManager, "profileFragment")
+            val bottomSheetDialogFragment = BottomSheetProfileDialog()
+            bottomSheetDialogFragment.show(supportFragmentManager, BottomSheetProfileDialog.TAG)
         }
 
         // Set FloatingActionButton click listeners

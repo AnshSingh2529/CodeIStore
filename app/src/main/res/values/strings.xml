@@ -45,4 +45,6 @@
     <string name="welcome_to_store">Welcome to Store</string>
     <string name="get_started">Let\'s Begin</string>
     <string name="waveimage">waveImage</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
 </resources>

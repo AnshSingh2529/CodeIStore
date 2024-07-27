@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_adapters.GamesAdapter
+import dev.codeiansh.game.rcv_adapters.GamesViewPagerAdapter
 import dev.codeiansh.game.rcv_model.GamesModel
 import dev.codeiansh.game.vp_adapters.GamesAdapterVP
 import dev.codeiansh.game.vp_model.GamesModel_vp
@@ -19,8 +20,7 @@ import dev.codeiansh.game.vp_model.GamesModel_vp
 
 class GameFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var rcvadapter: GamesAdapter
+    private lateinit var rcv_viewPager: ViewPager2
     private lateinit var rcvlist: List<GamesModel>
     private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: GamesAdapterVP
@@ -78,16 +78,19 @@ class GameFragment : Fragment() {
             GamesModel("name4", R.drawable.ic_launcher_background),
         )
 
+        val pageSize = 3
+        val page = rcvlist.chunked(pageSize)
+
+        rcv_viewPager = view.findViewById(R.id.rcv_viewPager2)
+        val adapter = GamesViewPagerAdapter(page)
+        rcv_viewPager.adapter = adapter
+
+
         viewPager = view.findViewById(R.id.games_viewPager2)
         vpadapter = GamesAdapterVP()
         viewPager.adapter = vpadapter
         vpadapter.submitList(imageList)
 
-        recyclerView = view.findViewById(R.id.games_recyclerView)
-        rcvadapter = GamesAdapter(rcvlist)
-        recyclerView.adapter = rcvadapter
-        recyclerView.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
         handler.postDelayed(runnable, 3000)
         return view
     }

@@ -1,6 +1,7 @@
 package dev.codeiansh.game.fragments
 
 import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +9,16 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.cardview.widget.CardView
-import androidx.fragment.app.DialogFragment
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.google.firebase.auth.FirebaseAuth
 import dev.codeiansh.game.R
+import dev.codeiansh.game.activity.LoginActivity
 
-class DialogBoxProfile : DialogFragment() {
+class BottomSheetProfileDialog : BottomSheetDialogFragment() {
 
+    private lateinit var firebaseAuth: FirebaseAuth
     override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
+        inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.dialog_profile, container, false)
@@ -34,17 +37,26 @@ class DialogBoxProfile : DialogFragment() {
         // User's profile buttons functionality
         val cancelBtn = view.findViewById<ImageButton>(R.id.cancelBtn)
         val profileChange = view.findViewById<CardView>(R.id.profileChange)
-        val accountSetupBtn = view.findViewById<CardView>(R.id.account_setup_btn)
-        val managingBtn = view.findViewById<CardView>(R.id.managing_btn)
-        val notifyBtn = view.findViewById<CardView>(R.id.notify_btn)
-        val paymentsBtn = view.findViewById<CardView>(R.id.payments_btn)
-        val privacyPolicyBtn = view.findViewById<CardView>(R.id.privacy_policy_btn)
-        val libraryBtn = view.findViewById<CardView>(R.id.library_btn)
-        val appPassBtn = view.findViewById<CardView>(R.id.app_pass_btn)
-        val pointsBtn = view.findViewById<CardView>(R.id.points_btn)
-        val settingsBtn = view.findViewById<CardView>(R.id.settings_btn)
-        val helpFeedbackBtn = view.findViewById<CardView>(R.id.help_feedback_btn)
-        val privacyPolicy = view.findViewById<CardView>(R.id.privacy_policy)
+        val accountSetupBtn = view.findViewById<TextView>(R.id.account_setup_btn)
+        val managingBtn = view.findViewById<TextView>(R.id.managing_btn)
+        val notifyBtn = view.findViewById<TextView>(R.id.notify_btn)
+        val paymentsBtn = view.findViewById<TextView>(R.id.payments_btn)
+        val privacyPolicyBtn = view.findViewById<TextView>(R.id.privacy_policy_btn)
+        val libraryBtn = view.findViewById<TextView>(R.id.library_btn)
+        val appPassBtn = view.findViewById<TextView>(R.id.app_pass_btn)
+        val pointsBtn = view.findViewById<TextView>(R.id.points_btn)
+        val settingsBtn = view.findViewById<TextView>(R.id.settings_btn)
+        val helpFeedbackBtn = view.findViewById<TextView>(R.id.help_feedback_btn)
+        val privacyPolicy = view.findViewById<TextView>(R.id.privacy_policy)
+        val signoutBtn = view.findViewById<TextView>(R.id.signOut_btn)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+
+        signoutBtn.setOnClickListener {
+            firebaseAuth.signOut()
+            startActivity(Intent(view.context, LoginActivity::class.java))
+            dismiss()
+        }
 
         cancelBtn.setOnClickListener {
             dismiss()
@@ -92,5 +104,9 @@ class DialogBoxProfile : DialogFragment() {
 
         // Return the view
         return view
+    }
+
+    companion object {
+        const val TAG = "BottomSheetProfileDialog"
     }
 }

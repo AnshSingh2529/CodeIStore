@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_adapters.HomeAdapter
+import dev.codeiansh.game.rcv_adapters.HomeViewPagerAdapter
 import dev.codeiansh.game.rcv_model.HomeModel
 import dev.codeiansh.game.vp_adapters.HomeAdapterVP
 import dev.codeiansh.game.vp_model.HomeModel_vp
@@ -19,8 +20,7 @@ import dev.codeiansh.game.vp_model.HomeModel_vp
 
 class HomeFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var rcvadapter: HomeAdapter
+    private lateinit var rcv_viewPager: ViewPager2
     private lateinit var rcvlist: List<HomeModel>
     private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: HomeAdapterVP
@@ -83,16 +83,18 @@ class HomeFragment : Fragment() {
             HomeModel("name4", R.drawable.ic_launcher_background),
         )
 
+        val pageSize = 3
+        val page = rcvlist.chunked(pageSize)
+        rcv_viewPager = view.findViewById(R.id.rcv_viewPager2)
+        val adapter = HomeViewPagerAdapter(page)
+        rcv_viewPager.adapter = adapter
+
+
         viewPager = view.findViewById(R.id.home_viewPager2)
         vpadapter = HomeAdapterVP()
         viewPager.adapter = vpadapter
         vpadapter.submitList(imageList)
 
-        recyclerView = view.findViewById(R.id.home_recyclerView)
-        rcvadapter = HomeAdapter(rcvlist)
-        recyclerView.adapter = rcvadapter
-        recyclerView.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false);
 
         handler.postDelayed(runnable, 3000)
         return view

@@ -33,6 +33,7 @@ class SignupActivity : AppCompatActivity() {
         signupChecked = findViewById(R.id.signup_checked)
         val signupLogin: TextView = findViewById(R.id.signup_Login)
 
+
         signupLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -41,28 +42,25 @@ class SignupActivity : AppCompatActivity() {
 
         val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
 
-        // Helper function to validate the form
-        fun validateForm() {
-            val passwordValid = signupPassword.text.length >= 8
-            val checkBoxChecked = signupChecked.isChecked
-            signupBtn.isEnabled = passwordValid && checkBoxChecked
-        }
 
         // Set up a TextWatcher to monitor changes in the password field
         signupPassword.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                validateForm()
+            override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
+                if (s.length >= 8 || count >= 8 || start >= 8) {
+                    signupChecked.isClickable = true
+                    signupBtn.isClickable = true
+                } else {
+                    signupChecked.isChecked = false
+                    signupChecked.isClickable = false
+                    signupBtn.isClickable = false
+                }
             }
 
             override fun afterTextChanged(s: Editable?) {}
         })
 
-        // Set up a listener for the CheckBox
-        signupChecked.setOnCheckedChangeListener { _, _ ->
-            validateForm()
-        }
 
         signupBtn.setOnClickListener {
             val username = signupFirstName.text.toString()
@@ -70,40 +68,34 @@ class SignupActivity : AppCompatActivity() {
             val password = signupPassword.text.toString()
 
             if (username.isNotBlank() && email.isNotBlank() && password.isNotBlank()) {
-                if (password.length >= 8) {
-                    if (signupChecked.isChecked) { // Check if the checkbox is checked
-                        firebaseAuth.createUserWithEmailAndPassword(email, password)
-                            .addOnCompleteListener { task ->
-                                if (task.isSuccessful) {
-                                    val editor = sharedPreferences.edit()
-                                    editor.putString("username", username)
-                                    editor.putString("email", email)
-                                    editor.apply()
+                firebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener {
+                        if (it.isSuccessful) {
+                            val editor = sharedPreferences.edit()
+                            editor.putString("username", username)
+                            editor.putString("email", email)
+                            editor.apply()
 
-                                    val intent = Intent(this, LoginActivity::class.java)
-                                    startActivity(intent)
-                                    finish()
-                                } else {
-                                    Toast.makeText(
-                                        this, "Authentication failed: ${task.exception?.message}", Toast.LENGTH_SHORT
-                                    ).show()
-                                }
-                            }
-                    } else {
-                        Toast.makeText(
-                            this, "Please agree to the terms and conditions.", Toast.LENGTH_SHORT
-                        ).show()
+                            val intent = Intent(this, LoginActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            val errorMessage = it.exception?.message ?: "Unknown error"
+                            Toast.makeText(
+                                this,
+                                "Authentication failed: Failed to create user.",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
                     }
-                } else {
-                    Toast.makeText(
-                        this, "Password must be at least 8 characters!", Toast.LENGTH_SHORT
-                    ).show()
-                }
             } else {
                 Toast.makeText(
-                    this, "Please fill all the fields!", Toast.LENGTH_SHORT
+                    this, "Please agree to the terms and conditions.", Toast.LENGTH_SHORT
                 ).show()
             }
         }
     }
+
 }
+
+

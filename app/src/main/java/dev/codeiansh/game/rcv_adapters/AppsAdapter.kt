@@ -1,6 +1,5 @@
 package dev.codeiansh.game.rcv_adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_model.AppsModel
 
-class AppsAdapter(private val appsList: List<AppsModel>) :
+class AppsAdapter(private val itemList: List<AppsModel>) :
     RecyclerView.Adapter<AppsAdapter.AppsViewHolder>() {
 
     class AppsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -31,11 +30,11 @@ class AppsAdapter(private val appsList: List<AppsModel>) :
     }
 
     override fun onBindViewHolder(holder: AppsViewHolder, position: Int) {
-        val appsModel = appsList[position]
+        val appsModel = itemList[position]
         holder.bind(appsModel)
     }
 
     override fun getItemCount(): Int {
-        return appsList.size
+        return itemList.size
     }
 }
