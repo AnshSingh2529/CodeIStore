@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // Define a function to navigate to a specific fragment
+
     private fun navigateToFragment(destination: Int) {
         val currentFragmentId = navController.currentDestination?.id
         when (destination) {

@@ -23,8 +23,7 @@ class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-
-        firebaseAuth = FirebaseAuth.getInstance() // Initialize FirebaseAuth
+        // Initialize FirebaseAuth
 
         signupBtn = findViewById(R.id.signup_button)
         val signupEmail: EditText = findViewById(R.id.signup_email)
@@ -61,7 +60,7 @@ class SignupActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {}
         })
 
-
+        firebaseAuth = FirebaseAuth.getInstance()
         signupBtn.setOnClickListener {
             val username = signupFirstName.text.toString()
             val email = signupEmail.text.toString()

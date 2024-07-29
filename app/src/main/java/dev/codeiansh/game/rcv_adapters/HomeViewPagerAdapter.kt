@@ -31,7 +31,7 @@ class HomeViewPagerAdapter(private val pages: List<List<HomeModel>>) :
         val itemAdapter = HomeAdapter(pages[position])
         holder.recyclerView.adapter = itemAdapter
         holder.recyclerView.layoutManager =
-            LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
+            LinearLayoutManager(holder.itemView.context, LinearLayoutManager.VERTICAL, false)
     }
 
     override fun getItemCount(): Int {

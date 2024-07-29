@@ -15,10 +15,15 @@ class AppsAdapter(private val itemList: List<AppsModel>) :
     class AppsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val image = itemView.findViewById<ImageView>(R.id.rcv_Apps_image)
         private val name = itemView.findViewById<TextView>(R.id.rcv_Apps_text)
+        private val type = itemView.findViewById<TextView>(R.id.type)
+        private val rating = itemView.findViewById<TextView>(R.id.rating)
+
 
         fun bind(appsModel: AppsModel) {
             image.setImageResource(appsModel.image)
             name.text = appsModel.name
+            type.text = appsModel.type
+            rating.text = appsModel.rating
         }
     }
 

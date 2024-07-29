@@ -30,7 +30,7 @@ class GamesViewPagerAdapter(private val pages: List<List<GamesModel>>) :
     override fun onBindViewHolder(holder: GamesViewPagerViewHolder, position: Int) {
         val itemAdapter = GamesAdapter(pages[position])
         holder.recyclerView.adapter = itemAdapter
-        holder.recyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.HORIZONTAL, false)
+        holder.recyclerView.layoutManager = LinearLayoutManager(holder.itemView.context, LinearLayoutManager.VERTICAL, false)
 
     }
 }

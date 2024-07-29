@@ -16,10 +16,14 @@ class GamesAdapter(private val gamesList: List<GamesModel>) :
     class GamesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val name: TextView = itemView.findViewById(R.id.rcv_Games_text)
         private val image: ImageView = itemView.findViewById(R.id.rcv_Games_image)
+        private val type: TextView = itemView.findViewById(R.id.type)
+        private val rating: TextView = itemView.findViewById(R.id.rating)
 
         fun bind(gamesModel: GamesModel) {
             name.text = gamesModel.name
             image.setImageResource(gamesModel.image)
+            type.text = gamesModel.type
+            rating.text = gamesModel.rating
         }
     }
 

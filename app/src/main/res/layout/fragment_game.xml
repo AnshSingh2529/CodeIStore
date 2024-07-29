@@ -14,12 +14,12 @@
         <FrameLayout
             android:id="@+id/vpGameFrame"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/games_viewPager2"
                 android:layout_width="match_parent"
-                android:layout_height="250dp" />
+                android:layout_height="match_parent" />
 
         </FrameLayout>
 
@@ -59,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:text="Suggested for you"
                 android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <View
@@ -76,12 +76,50 @@
         </LinearLayout>
 
         <FrameLayout
+            android:id="@+id/listView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/suggestedView">
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/rcv_viewPager2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center" />
+        </FrameLayout>
+        <LinearLayout
+            android:id="@+id/Seem_more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15dp"
+            android:layout_below="@+id/listView"
+            >
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/recommended_for_you"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_more"
+                android:layout_gravity="end|center"
+                />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/recommendedlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/Seem_more">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/recommended_viewPager2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center" />

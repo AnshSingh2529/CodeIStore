@@ -47,4 +47,9 @@
     <string name="waveimage">waveImage</string>
     <string name="login">Login</string>
     <string name="logout">Logout</string>
+    <string name="recommended_for_you">Recommended for you</string>
+    <string name="suggested_for_you">Suggested for you</string>
+    <string name="sponsored">Sponsored</string>
+    <string name="type">type</string>
+    <string name="rating">rating</string>
 </resources>

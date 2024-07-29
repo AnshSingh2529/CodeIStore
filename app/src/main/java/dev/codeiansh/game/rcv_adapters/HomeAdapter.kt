@@ -14,11 +14,15 @@ class HomeAdapter(private val homeList: List<HomeModel>) :
 
     class HomeViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val name: TextView = itemView.findViewById(R.id.rcvHome_text)
-        private val image: ImageView = itemView.findViewById(R.id.rcvHome_image)
+        val image: ImageView = itemView.findViewById(R.id.rcvHome_image)
+        private val type: TextView = itemView.findViewById(R.id.type)
+        private val rating: TextView = itemView.findViewById(R.id.rating)
 
         fun bind(homeModel: HomeModel) {
             name.text = homeModel.name
             image.setImageResource(homeModel.image)
+            type.text = homeModel.type
+            rating.text = homeModel.rating
         }
 
     }

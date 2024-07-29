@@ -9,18 +9,21 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.widget.ViewPager2
 import dev.codeiansh.game.R
-import dev.codeiansh.game.rcv_adapters.AppsAdapter
 import dev.codeiansh.game.rcv_adapters.AppsViewPagerAdapter
 import dev.codeiansh.game.rcv_model.AppsModel
+import dev.codeiansh.game.recommended.adapters.VpAppsAdapter
+import dev.codeiansh.game.recommended.models.RecommendedAppsData
 import dev.codeiansh.game.vp_adapters.AppsAdapterVP
 import dev.codeiansh.game.vp_model.AppsModel_vp
 
 class AppsFragment : Fragment() {
+    private lateinit var recommendedViewPager: ViewPager2
     private lateinit var rcv_viewPager: ViewPager2
     private lateinit var rcvlist: List<AppsModel>
     private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: AppsAdapterVP
     private lateinit var imageList: List<AppsModel_vp>
+    private lateinit var recommendedList: List<RecommendedAppsData>
     private var currentPage = 0
     private val handler = Handler(Looper.getMainLooper())
 
@@ -61,24 +64,51 @@ class AppsFragment : Fragment() {
 
         // Initialize recycler view list
         rcvlist = listOf(
-            AppsModel("name1", R.drawable.ic_launcher_background),
-            AppsModel("name2", R.drawable.ic_launcher_background),
-            AppsModel("name3", R.drawable.ic_launcher_background),
-            AppsModel("name4", R.drawable.ic_launcher_background),
-            AppsModel("name5", R.drawable.ic_launcher_background),
-            AppsModel("name6", R.drawable.ic_launcher_background),
-            AppsModel("name7", R.drawable.ic_launcher_background),
-            AppsModel("name8", R.drawable.ic_launcher_background),
-            AppsModel("name9", R.drawable.ic_launcher_background)
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            AppsModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+
         )
 
+         recommendedList = listOf(
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedAppsData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+
+        )
+
+//        For Recommendation Page
+        val recPage = 3
+        val recPages = recommendedList.chunked(recPage)
+
+        recommendedViewPager = view.findViewById(R.id.recommended_viewPager2)
+        val recAdapter = VpAppsAdapter(recPages)
+        recommendedViewPager.adapter = recAdapter
+
+//        For Suggested Page
         val pageSize = 3
         val pages = rcvlist.chunked(pageSize)
 
         rcv_viewPager = view.findViewById(R.id.rcv_viewPager2)
         val adapter = AppsViewPagerAdapter(pages)
         rcv_viewPager.adapter = adapter
-
 
 
         // Set up ViewPager2

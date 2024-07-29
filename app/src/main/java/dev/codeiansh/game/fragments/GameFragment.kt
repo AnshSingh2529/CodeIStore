@@ -14,17 +14,20 @@ import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_adapters.GamesAdapter
 import dev.codeiansh.game.rcv_adapters.GamesViewPagerAdapter
 import dev.codeiansh.game.rcv_model.GamesModel
+import dev.codeiansh.game.recommended.adapters.VpGamesAdapter
+import dev.codeiansh.game.recommended.models.RecommendedGamesData
 import dev.codeiansh.game.vp_adapters.GamesAdapterVP
 import dev.codeiansh.game.vp_model.GamesModel_vp
 
 
 class GameFragment : Fragment() {
-
+    private lateinit var recommendedViewPager: ViewPager2
     private lateinit var rcv_viewPager: ViewPager2
     private lateinit var rcvlist: List<GamesModel>
     private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: GamesAdapterVP
     private lateinit var imageList: List<GamesModel_vp>
+    private lateinit var recommendedList: List<RecommendedGamesData>
     private var currentPage = 0
     private val handler = Handler(Looper.getMainLooper())
 
@@ -65,20 +68,52 @@ class GameFragment : Fragment() {
             ),
         )
         rcvlist = listOf(
-            GamesModel("name1", R.drawable.ic_launcher_background),
-            GamesModel("name2", R.drawable.ic_launcher_background),
-            GamesModel("name3", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
-            GamesModel("name4", R.drawable.ic_launcher_background),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            GamesModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+
         )
 
+         recommendedList = listOf(
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedGamesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+
+        )
+
+//        for recommended Page
+
         val pageSize = 3
+        val recPages = recommendedList.chunked(pageSize)
+
+        recommendedViewPager = view.findViewById(R.id.recommended_viewPager2)
+        val recAdapter = VpGamesAdapter(recPages)
+        recommendedViewPager.adapter = recAdapter
+
+
+
+//        For suggested Page
         val page = rcvlist.chunked(pageSize)
 
         rcv_viewPager = view.findViewById(R.id.rcv_viewPager2)

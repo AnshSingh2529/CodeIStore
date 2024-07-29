@@ -14,17 +14,21 @@ import dev.codeiansh.game.R
 import dev.codeiansh.game.rcv_adapters.HomeAdapter
 import dev.codeiansh.game.rcv_adapters.HomeViewPagerAdapter
 import dev.codeiansh.game.rcv_model.HomeModel
+import dev.codeiansh.game.recommended.adapters.VpHomesAdapter
+import dev.codeiansh.game.recommended.models.RecommendedHomesData
 import dev.codeiansh.game.vp_adapters.HomeAdapterVP
 import dev.codeiansh.game.vp_model.HomeModel_vp
 
 
 class HomeFragment : Fragment() {
 
+    private lateinit var recommendedViewPager: ViewPager2
     private lateinit var rcv_viewPager: ViewPager2
     private lateinit var rcvlist: List<HomeModel>
     private lateinit var viewPager: ViewPager2
     private lateinit var vpadapter: HomeAdapterVP
     private lateinit var imageList: List<HomeModel_vp>
+    private lateinit var recommendedList: List<RecommendedHomesData>
     private var currentPage = 0
     private val handler = Handler(Looper.getMainLooper())
 
@@ -68,22 +72,49 @@ class HomeFragment : Fragment() {
             ),
         )
         rcvlist = listOf(
-            HomeModel("name1", R.drawable.ic_launcher_background),
-            HomeModel("name2", R.drawable.ic_launcher_background),
-            HomeModel("name3", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
-            HomeModel("name4", R.drawable.ic_launcher_background),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            HomeModel("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+
         )
 
+         recommendedList = listOf(
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+            RecommendedHomesData("name1", R.drawable.ic_launcher_background,"type1","rating1","size1"),
+
+        )
         val pageSize = 3
+//        for recommended Page
+        val recPage = recommendedList.chunked(pageSize)
+        recommendedViewPager = view.findViewById(R.id.recommended_viewPager2)
+        val recAdapter = VpHomesAdapter(recPage)
+        recommendedViewPager.adapter = recAdapter
+
+
+
         val page = rcvlist.chunked(pageSize)
         rcv_viewPager = view.findViewById(R.id.rcv_viewPager2)
         val adapter = HomeViewPagerAdapter(page)

@@ -25,16 +25,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center"
-                android:scaleType="centerCrop"
                 android:contentDescription="@string/logo"
-                android:src="@drawable/ic_codestore"
-                />
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_codestore" />
 
             <View
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                />
+                android:layout_weight="1" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="50dp"
@@ -52,11 +50,9 @@
                     android:backgroundTint="@color/white"
                     android:contentDescription="@string/profilebtn"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/ic_person"
-                    />
+                    android:src="@drawable/ic_person" />
 
             </androidx.cardview.widget.CardView>
-
 
 
             <!--                <androidx.cardview.widget.CardView-->
@@ -149,6 +145,10 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="-19dp"
+            android:layout_marginBottom="-21dp"
             app:menu_colorNormal="@color/colorPrimary"
             app:menu_colorPressed="@color/white"
             app:menu_colorRipple="@color/colorAccent"
@@ -160,6 +160,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_home_24"
+                android:tint="@color/colorPrimary"
                 app:fab_size="normal" />
 
             <com.github.clans.fab.FloatingActionButton
@@ -167,6 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_apps_24"
+                android:tint="@color/colorPrimary"
                 app:fab_size="normal" />
 
             <com.github.clans.fab.FloatingActionButton
@@ -174,6 +176,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/baseline_games_24"
+                android:tint="@color/colorPrimary"
                 app:fab_size="normal" />
 
         </com.github.clans.fab.FloatingActionMenu>
