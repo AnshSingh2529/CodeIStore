@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -48,14 +49,16 @@ class BottomSheetProfileDialog : BottomSheetDialogFragment() {
         val settingsBtn = view.findViewById<TextView>(R.id.settings_btn)
         val helpFeedbackBtn = view.findViewById<TextView>(R.id.help_feedback_btn)
         val privacyPolicy = view.findViewById<TextView>(R.id.privacy_policy)
-        val signoutBtn = view.findViewById<TextView>(R.id.signOut_btn)
+        val signOutBtn = view.findViewById<Button>(R.id.signOut_btn)
 
         firebaseAuth = FirebaseAuth.getInstance()
 
-        signoutBtn.setOnClickListener {
+        signOutBtn.setOnClickListener {
             firebaseAuth.signOut()
             startActivity(Intent(view.context, LoginActivity::class.java))
             dismiss()
+            activity?.finish()
+
         }
 
         cancelBtn.setOnClickListener {

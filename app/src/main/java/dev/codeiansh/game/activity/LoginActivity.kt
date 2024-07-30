@@ -27,6 +27,7 @@ class LoginActivity : AppCompatActivity() {
         val loginChecked: CheckBox = findViewById(R.id.login_checked)
 
         firebaseAuth = FirebaseAuth.getInstance()
+        val sharedPreferences = getSharedPreferences("UserData", MODE_PRIVATE)
 
         loginSignup.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
@@ -65,6 +66,13 @@ class LoginActivity : AppCompatActivity() {
                         firebaseAuth.signInWithEmailAndPassword(email, password)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
+                                    val user = firebaseAuth.currentUser
+                                    val username = user?.displayName ?: ""
+
+                                    val editor = sharedPreferences.edit()
+                                    editor.putString("email", email)
+                                    editor.putString("username", username)
+                                    editor.apply()
                                     val intent = Intent(this, MainActivity::class.java)
                                     startActivity(intent)
                                     finish()

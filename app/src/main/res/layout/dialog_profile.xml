@@ -231,14 +231,15 @@
                 android:textSize="12sp"                android:textStyle="bold"
                 app:drawableStartCompat="@drawable/ic_help"
                 app:drawableTint="@color/black"  />
-            <TextView
+            <Button
                 android:id="@+id/signOut_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingVertical="8dp"
                 android:text="@string/logout"
-                android:textColor="@color/black"
-                android:textSize="18sp"
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@color/white"
+                android:textSize="12sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
                 />
